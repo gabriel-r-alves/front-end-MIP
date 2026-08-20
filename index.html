@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema MIP</title>
+    <style>
+        table {
+            border: 1px solid #999;
+            border-collapse: collapse;
+            width: 100%
+        }
+        td {
+            border: 1px solid #999
+        }
+
+
+    </style>
+</head>
+<body>
+    <table id="tbl-printers">
+        <input type="text"> <button>Buscar</button>
+        <thead>
+            <th>N° Serial</th>
+            <th>Modelo</th>
+            <th>Filial</th>
+            <th>Status</th>
+            <th>Ip</th>
+            <th></th>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <button type="button" onclick="readTblPrinters()"> Read Table</button>
+
+    <button type="button" onclick="addRowTblPrinters()"> Add Row</button>
+    <script src="script.js"></script>
+    <script>
+        getFromApi()
+    </script>
+</body>
+</html>
