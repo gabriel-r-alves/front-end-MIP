@@ -4,39 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema MIP</title>
-    <style>
-        table {
-            border: 1px solid #999;
-            border-collapse: collapse;
-            width: 100%
-        }
-        td {
-            border: 1px solid #999
-        }
-
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <table id="tbl-printers">
-        <input type="text"> <button>Buscar</button>
-        <thead>
-            <th>N° Serial</th>
-            <th>Modelo</th>
-            <th>Filial</th>
-            <th>Status</th>
-            <th>Ip</th>
-            <th></th>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
-    <button type="button" onclick="readTblPrinters()"> Read Table</button>
+    <div id="Header">
+        <h2> Sistema MIP (Monitoramento de Impressora em Python)</h2>
+    </div>
 
-    <button type="button" onclick="addRowTblPrinters()"> Add Row</button>
-    <script src="script.js"></script>
-    <script>
-        getFromApi()
-    </script>
+    <div>
+        <button>Adicionar Filtro</button>
+
+        <div class=filters-tbl-printers id="filters-tbl-printers">
+            <label for="campo">campo</label>
+            <select id="campo">
+                <option value="">Selecione...</option>
+                <!-- outros campos são adicionados por js-->
+            </select>
+
+            <label for="operador">Condição</label>
+            <select id="operador">
+                <option value="igual">Igual</option> 
+                <option value="contem">Contém</option>
+            </select>
+            
+            <!-- vai alterar para input ou select dependendo da opção no select campo-->
+            <label for="valor">Valor</label>
+            <div id="valor-container">
+                <!-- JS coloca input ou select aqui -->
+            </div>
+
+            <button type="button">Aplicar filtro</button>
+        </div>
+
+        <br>
+
+        <div class="tbl-container">
+            <table id="tbl-printers">
+                <thead>
+                    <th>N° Serial</th>
+                    <th>Modelo</th>
+                    <th>Filial</th>
+                    <th>Status</th>
+                    <th>Ip</th>
+                    <th>Contador</th>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <br>
+
+    <button type="button" onclick="updateTblPrinters()"> Update Table</button>
+
+    <button type="button" onclick="addRowTbl()"> Add Row</button>
+    <script type="module" src="scripts/script.js"></script>
 </body>
 </html>
