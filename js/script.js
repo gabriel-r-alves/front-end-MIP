@@ -55,4 +55,4 @@ async function startAutoUpdate() {
     }
 }
 
-startAutoUpdate()
+// startAutoUpdate()

@@ -55,6 +55,26 @@ export class PrinterTable{
     }
 
     // Ok
+    removeFilter(field, value=null){
+        if (!this.filters[field]){
+            console.error('Erro ao tentativa de excluir filtro que não existe.')
+            return;
+        };
+
+
+        if (value === null) {
+            this.filters[field] = [];
+            return;
+        }
+
+        const index = this.filters[field].indexOf(value);
+
+        if (index > -1) {
+            this.filters[field].splice(index, 1);
+        }
+    }
+
+    // Ok
     resetFilter() {
         this.filters = {
             num_serial: [],

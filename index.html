@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema MIP</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div id="Header">
@@ -12,28 +12,37 @@
     </div>
 
     <div>
-        <button>Adicionar Filtro</button>
+        <button class="btn-add-filter">Adicionar Filtro</button>
+
+        <br><br>
 
         <div class=filters-tbl-printers id="filters-tbl-printers">
-            <label for="campo">campo</label>
-            <select id="campo">
-                <option value="">Selecione...</option>
-                <!-- outros campos são adicionados por js-->
-            </select>
+            <div id="filters-inputs">
+                <label for="field">campo</label>
+                <select id="field">
+                    <option value="">Selecione...</option>
+                    <!-- outros campos são adicionados por js-->
+                </select>
 
-            <label for="operador">Condição</label>
-            <select id="operador">
-                <option value="igual">Igual</option> 
-                <option value="contem">Contém</option>
-            </select>
-            
-            <!-- vai alterar para input ou select dependendo da opção no select campo-->
-            <label for="valor">Valor</label>
-            <div id="valor-container">
-                <!-- JS coloca input ou select aqui -->
+                <label for="operator">Condição</label>
+                <select id="operator">
+                    <option value="igual">Igual</option> 
+                    <option value="contem">Contém</option>
+                </select>
+                
+                <!-- vai alterar para input ou select dependendo da opção no select campo-->
+                <label for="value">Valor</label>
+                <div id="value-container">
+                    <!-- JS coloca input ou select aqui -->
+                </div>
+
+                <button type="button">Aplicar filtro</button>
             </div>
 
-            <button type="button">Aplicar filtro</button>
+            <div id="filter-exibition">
+                
+            </div>
+
         </div>
 
         <br>
@@ -59,6 +68,6 @@
     <button type="button" onclick="updateTblPrinters()"> Update Table</button>
 
     <button type="button" onclick="addRowTbl()"> Add Row</button>
-    <script type="module" src="scripts/script.js"></script>
+    <script type="module" src="js/script.js"></script>
 </body>
 </html>
