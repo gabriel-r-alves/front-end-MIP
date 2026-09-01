@@ -1,5 +1,4 @@
-import { PrinterTable } from './tbl_printers.js'
-
+import { printerState } from './printerState.js'
 
 async function getFromApi(){
     try{
@@ -31,14 +30,10 @@ async function updateTblPrinters(){
 
     // validar verificação
     if (data != null) {
-        const table = new PrinterTable('tbl-printers');
 
-        table.setData(data);
+        printerState.setData(data);
+        printerState.render();
         
-        // table.addFilter('status','online')
-        table.addFilter('branch_current_id','25')
-
-        table.render();
         console.log('Tabela atualizada com sucesso!');
     }
     else{
@@ -55,4 +50,9 @@ async function startAutoUpdate() {
     }
 }
 
-// startAutoUpdate()
+
+// EventListeners
+document.getElementById('btn-update-tbl-printers').addEventListener('click', updateTblPrinters);
+
+
+startAutoUpdate();

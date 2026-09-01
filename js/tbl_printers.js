@@ -38,40 +38,38 @@ export class PrinterTable{
         printers.forEach(printer => {
             this.addRow(printer);
         })
-        console.log(this.filters)
+        // console.log(this.filters)
     }
 
     // Metodos com/dos Filtros
 
     // Ok
-    addFilter(field, value) {
+    addFilter(field, operator, value) {
         if (!this.filters[field]) {
             this.filters[field] = [];
         }
 
         if (!this.filters[field].includes(value)) {
-            this.filters[field].push(value);
+            this.filters[field].push({
+                operator,
+                value
+            });
         }
     }
 
     // Ok
-    removeFilter(field, value=null){
+    deleteFilter(field, operator, value){
         if (!this.filters[field]){
             console.error('Erro ao tentativa de excluir filtro que não existe.')
             return;
         };
 
-
-        if (value === null) {
-            this.filters[field] = [];
-            return;
-        }
-
-        const index = this.filters[field].indexOf(value);
-
-        if (index > -1) {
-            this.filters[field].splice(index, 1);
-        }
+        this.filters[field] = this.filters[field].filter(filter =>
+            !(
+                filter.operator === operator &&
+                filter.value === value
+            )
+        );
     }
 
     // Ok
@@ -86,20 +84,37 @@ export class PrinterTable{
         };
     }
     
-    // finalizar
-    getFilteredData(){
+    // Ok
+    getFilteredData() {
         return this.printers.filter(printer => {
             for (const field in this.filters) {
-                const values = this.filters[field];
+                const filters = this.filters[field];
 
-                if (values.length === 0) {
+                if (filters.length === 0) {
                     continue;
                 }
 
-                if (!values.includes(String(printer[field]))) {
+                const printerValue = String(printer[field]).toLowerCase();
+
+                const fieldMatches = filters.some(filter => {
+                    const value = String(filter.value).toLowerCase();
+
+                    if (filter.operator === 'igual') {
+                        return printerValue === value;
+                    }
+
+                    if (filter.operator === 'contem') {
+                        return printerValue.includes(value);
+                    }
+
                     return false;
-                }                
+                });
+
+                if (!fieldMatches) {
+                    return false;
+                }
             }
+
             return true;
         });
     }

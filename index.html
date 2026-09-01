@@ -12,35 +12,40 @@
     </div>
 
     <div>
-        <button class="btn-add-filter">Adicionar Filtro</button>
+        <h3>Filtros ativos:</h3>
+            <div id="filters-list">
+                
+            </div>
+        <button id="btn-new-filter" class="btn-new-filter"> Novo Filtro </button>
 
         <br><br>
 
         <div class=filters-tbl-printers id="filters-tbl-printers">
             <div id="filters-inputs">
-                <label for="field">campo</label>
-                <select id="field">
-                    <option value="">Selecione...</option>
+                <label for="field-filter"> Campo </label>
+                <select id="field-filter">
+                    <option value=""> Selecione... </option>
                     <!-- outros campos são adicionados por js-->
                 </select>
 
-                <label for="operator">Condição</label>
-                <select id="operator">
-                    <option value="igual">Igual</option> 
-                    <option value="contem">Contém</option>
+                <br>
+
+                <label for="operator-filter"> Condição </label>
+                <select id="operator-filter">
+                    <option value=""> Selecione... </option>
+                    <option value="igual"> Igual </option> 
+                    <option value="contem"> Contém </option>
                 </select>
+
+                <br>
                 
                 <!-- vai alterar para input ou select dependendo da opção no select campo-->
-                <label for="value">Valor</label>
+                <label for="value-filter"> Valor </label>
                 <div id="value-container">
                     <!-- JS coloca input ou select aqui -->
                 </div>
 
-                <button type="button">Aplicar filtro</button>
-            </div>
-
-            <div id="filter-exibition">
-                
+                <button type="button" id="btn-apply-filter"> Aplicar filtro </button>
             </div>
 
         </div>
@@ -50,12 +55,14 @@
         <div class="tbl-container">
             <table id="tbl-printers">
                 <thead>
-                    <th>N° Serial</th>
-                    <th>Modelo</th>
-                    <th>Filial</th>
-                    <th>Status</th>
-                    <th>Ip</th>
-                    <th>Contador</th>
+                    <tr>
+                        <th>N° Serial</th>
+                        <th>Modelo</th>
+                        <th>Filial</th>
+                        <th>Status</th>
+                        <th>Ip</th>
+                        <th>Contador</th>
+                    </tr>
                 </thead>
                 <tbody>
                 </tbody>
@@ -63,11 +70,12 @@
         </div>
     </div>
 
-    <br>
+    <!-- <br> -->
 
-    <button type="button" onclick="updateTblPrinters()"> Update Table</button>
+    <button type="button" id="btn-update-tbl-printers"> Update Table </button>
+    <!-- <button type="button" id="btn-add-tbl-printers"> Add Row </button> -->
 
-    <button type="button" onclick="addRowTbl()"> Add Row</button>
     <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/filter.js"></script>
 </body>
 </html>

@@ -1,3 +1,8 @@
+/* 
+class .class_name
+id    #element_id
+*/
+
 .table-container {
     max-height: 400px;
     overflow-y: auto;
@@ -18,4 +23,8 @@ table {
 td {
     border: 1px solid #999;
     text-align: center;
+}
+
+.filters-tbl-printers {
+    visibility: hidden;
 }
