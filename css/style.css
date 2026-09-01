@@ -1,0 +1,30 @@
+/* 
+class .class_name
+id    #element_id
+*/
+
+.table-container {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#tbl-printers thead th {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+}
+table {
+    border: 1px solid #999;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    border: 1px solid #999;
+    text-align: center;
+}
+
+.filters-tbl-printers {
+    visibility: hidden;
+}

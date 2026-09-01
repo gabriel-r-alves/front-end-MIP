@@ -4,39 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema MIP</title>
-    <style>
-        table {
-            border: 1px solid #999;
-            border-collapse: collapse;
-            width: 100%
-        }
-        td {
-            border: 1px solid #999
-        }
-
-
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <table id="tbl-printers">
-        <input type="text"> <button>Buscar</button>
-        <thead>
-            <th>N° Serial</th>
-            <th>Modelo</th>
-            <th>Filial</th>
-            <th>Status</th>
-            <th>Ip</th>
-            <th></th>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
-    <button type="button" onclick="readTblPrinters()"> Read Table</button>
+    <div id="Header">
+        <h2> Sistema MIP (Monitoramento de Impressora em Python)</h2>
+    </div>
 
-    <button type="button" onclick="addRowTblPrinters()"> Add Row</button>
-    <script src="script.js"></script>
-    <script>
-        getFromApi()
-    </script>
+    <div>
+        <h3>Filtros ativos:</h3>
+            <div id="filters-list">
+                
+            </div>
+        <button id="btn-new-filter" class="btn-new-filter"> Novo Filtro </button>
+
+        <br><br>
+
+        <div class=filters-tbl-printers id="filters-tbl-printers">
+            <div id="filters-inputs">
+                <label for="field-filter"> Campo </label>
+                <select id="field-filter">
+                    <option value=""> Selecione... </option>
+                    <!-- outros campos são adicionados por js-->
+                </select>
+
+                <br>
+
+                <label for="operator-filter"> Condição </label>
+                <select id="operator-filter">
+                    <option value=""> Selecione... </option>
+                    <option value="igual"> Igual </option> 
+                    <option value="contem"> Contém </option>
+                </select>
+
+                <br>
+                
+                <!-- vai alterar para input ou select dependendo da opção no select campo-->
+                <label for="value-filter"> Valor </label>
+                <div id="value-container">
+                    <!-- JS coloca input ou select aqui -->
+                </div>
+
+                <button type="button" id="btn-apply-filter"> Aplicar filtro </button>
+            </div>
+
+        </div>
+
+        <br>
+
+        <div class="tbl-container">
+            <table id="tbl-printers">
+                <thead>
+                    <tr>
+                        <th>N° Serial</th>
+                        <th>Modelo</th>
+                        <th>Filial</th>
+                        <th>Status</th>
+                        <th>Ip</th>
+                        <th>Contador</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- <br> -->
+
+    <button type="button" id="btn-update-tbl-printers"> Update Table </button>
+    <!-- <button type="button" id="btn-add-tbl-printers"> Add Row </button> -->
+
+    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/filter.js"></script>
 </body>
 </html>
