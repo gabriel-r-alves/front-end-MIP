@@ -6,24 +6,20 @@
     <title> Sistema MIP - Crud </title>
 </head>
 <body>
-    <H2> Adicionar Impressoras </H2>
+    <H2> Adicionar Impressora
+         </H2>
     
-    <form action="" class="form-crud-create">
-        <div class="form-crud-create">
-            <label for="num_serial">Digite o N° de série: </label>
-            <input type="text" name="num_serial" id="num_serial" required />
-        </div>
-
+    <form id="form-crud-printer" class="form-crud-create">
         <div class="form-crud-create">
             <label for="branch_native_id">Digite a filial nativa: </label>
-            <select name="branch_native_id" id="branch_native_id"> <!-- required> --> 
+            <select name="branch_native_id" id="branch_native_id"> <!-- > --> 
                 <option value=""> Selecione... </option>
             </select>
         </div>
 
         <div class="form-crud-create">
             <label for="branch_current_id">Digite a filial atual: </label>
-            <select name="branch_current_id" id="branch_current_id"> <!-- required> -->
+            <select name="branch_current_id" id="branch_current_id"> <!-- > -->
                 <option value=""> Selecione... </option>
             </select>
         </div>
@@ -32,24 +28,32 @@
         - se possivel escolher a partir da escolha da filial
         - se escolhe automáticamente baseado no IP
         - se deixa vazio e depois na varredura implementa automáticamente
-
+        -->
         <div class="form-crud-create">
-            <label for="network_id">Escolha o tipo da impressora: </label>
-            <select name="printer_type" id="printer_type" required>
-                <option value="laser"> Laser </option>
-                <option value="termica"> Térmica </option>
+            <label for="network_id">Escolha a rede: </label>
+            <select name="network_id" id="network_id" >
+                <option value=""> Selecione... </option>
             </select>
         </div>
-         -->
+
+        <div class="form-crud-create">
+            <label for="ip">Digite o ip: </label>
+            <input type="text" name="ip" id="ip" />
+        </div>
+
+        <div class="form-crud-create">
+            <label for="num_serial">Digite o N° de série: </label>
+            <input type="text" name="num_serial" id="num_serial"  />
+        </div>
         
         <div class="form-crud-create">
             <label for="model">Digite o Modelo: </label>
-            <input type="text" name="model" id="model" required />
+            <input type="text" name="model" id="model"  />
         </div>
 
         <div class="form-crud-create">
             <label for="printer_type">Escolha o tipo da impressora: </label>
-            <select name="printer_type" id="printer_type" required>
+            <select name="printer_type" id="printer_type" >
                 <option value="laser"> Laser </option>
                 <option value="termica"> Térmica </option>
             </select>
@@ -58,18 +62,15 @@
         <!-- Campo position - não adicionar agora, pois tem que criar outra entidade. Adicionar posteriormente
         <div class="form-crud-create">
             <label for="position">Digite o N° de série: </label>
-            <input type="text" name="position" id="position" required />
+            <input type="text" name="position" id="position"  />
         </div>
         -->
         
-        <div class="form-crud-create">
-            <label for="ip">Digite o ip: </label>
-            <input type="text" name="ip" id="ip" />
-        </div>
+        
 
         <div class="form-crud-create">
             <label for="connection_type">Escolha o tipo de conexão: </label>
-            <select name="connection_type" id="connection_type" required>
+            <select name="connection_type" id="connection_type" >
                 <option value="ip"> IP </option>
                 <option value="usb"> USB </option>
             </select>
@@ -78,13 +79,13 @@
         <!-- Campo Status - Implementar como padrão desconhecido ou offline
         <div class="form-crud-create">
             <label for="num_serial">Digite o N° de série: </label>
-            <input type="text" name="num_serial" id="num_serial" required />
+            <input type="text" name="num_serial" id="num_serial"  />
         </div>
         -->
 
         <div class="form-crud-create">
             <label for="collector_type">Escolha o tipo de coleta: </label>
-            <select name="collector_type" id="collector_type" required>
+            <select name="collector_type" id="collector_type" >
                 <option value="manual"> Manual </option>
                 <option value="ping"> Apenas Ping </option>
                 <option value="snmp"> SNMP </option>
@@ -95,13 +96,13 @@
         <!-- Campo counter - Inicializa como 0
         <div class="form-crud-create">
             <label for="num_serial">Digite o N° de série: </label>
-            <input type="text" name="num_serial" id="num_serial" required />
+            <input type="text" name="num_serial" id="num_serial"  />
         </div>
          -->
 
         <div class="form-crud-create">
             <label for="printer_function">Escolha a função: </label>
-            <select name="printer_function" id="printer_function" required>
+            <select name="printer_function" id="printer_function" >
                 <option value="operacional"> Operacional </option>
                 <option value="backup"> Backup </option>
             </select>
@@ -111,6 +112,6 @@
 
     </form>
 
-    <script type="module" src="../js/crudScript.js"></script>
+    <script type="module" src="../js/crudMain.js"></script>
 </body>
 </html>
