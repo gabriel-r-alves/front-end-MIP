@@ -5,7 +5,7 @@ export class PrinterState{
 
 
     setPrinters(printers) {
-        this.printers = printers;        
+        this.printers = printers;      
     }
 
 

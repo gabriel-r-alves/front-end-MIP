@@ -88,7 +88,7 @@ export class FilterPrinterUI{
     }
 
 
-     updateFieldSelect(fieldSelect, valuesList){
+    updateFieldSelect(fieldSelect, valuesList){
         valuesList.forEach(value => {
             const newOption = document.createElement('option');
 

@@ -1,8 +1,8 @@
-import { PrinterTableUI } from "../../ui/printers/printerTblUI.js";
-import { FilterPrinterUI } from "../../ui/printers/filterPrinterUI.js";
-import { FilterPrinter } from "../../models/printers/FilterPrinter.js";
-import { PrinterState } from "../../models/printers/printerState.js";
-import { getAllPrinters } from "../../services/printerApi.js";
+import { PrinterTableUI } from "../ui/printers/printerTblUI.js";
+import { FilterPrinterUI } from "../ui/printers/filterPrinterUI.js";
+import { FilterPrinter } from "../models/printers/FilterPrinter.js";
+import { PrinterState } from "../models/printers/printerState.js";
+import { getAllPrinters } from "../services/printerApi.js";
 
 
 export class PrinterPage {
