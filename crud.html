@@ -17,23 +17,18 @@
     <form id="form-crud-printer" class="form-crud-create">
         <div class="form-crud-create">
             <label for="branch_native_id">Digite a filial nativa: </label>
-            <select name="branch_native_id" id="branch_native_id"> <!-- > --> 
+            <select name="branch_native_id" id="branch_native_id" required>
                 <option value=""> Selecione... </option>
             </select>
         </div>
 
         <div class="form-crud-create">
             <label for="branch_current_id">Digite a filial atual: </label>
-            <select name="branch_current_id" id="branch_current_id"> <!-- > -->
+            <select name="branch_current_id" id="branch_current_id" required>
                 <option value=""> Selecione... </option>
             </select>
         </div>
 
-        <!-- Campo Network id - Verificar como implementar...
-        - se possivel escolher a partir da escolha da filial
-        - se escolhe automáticamente baseado no IP
-        - se deixa vazio e depois na varredura implementa automáticamente
-        -->
         <div class="form-crud-create">
             <label for="network_id">Escolha a rede: </label>
             <select name="network_id" id="network_id" >
@@ -48,7 +43,7 @@
 
         <div class="form-crud-create">
             <label for="num_serial">Digite o N° de série: </label>
-            <input type="text" name="num_serial" id="num_serial"  />
+            <input type="text" name="num_serial" id="num_serial" required />
         </div>
         
         <div class="form-crud-create">
