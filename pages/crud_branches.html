@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Adicionar Filial e Network </title>
+</head>
+<body>
+     <nav>
+        <ul>
+            <li><a href="./index.html">Página Home</a></li>
+        </ul>
+    </nav>
+
+    <H2> Filial </H2>
+
+    <form id="form-crud-branch" class="form-crud-branch">
+        
+        <!--
+        <div class="form-field-crud">
+            <label for="branch_campany_id"> Digite o ID da company: </label>
+            <input type="number" name="branch_campany_id" id="branch_campany_id">
+        </div>
+        -->
+
+        <div class="form-field-crud">
+            <label for="id"> Digite o ID da filial: </label>
+            <input type="number" name="branch_id" id="branch_id" required>
+        </div>
+        
+        <div class="form-field-crud">
+            <label for="type_branch"> Escolha entre matriz ou filial: </label>
+            <select name="type_branch" id="type_branch" required>
+                <option value="matriz"> Matriz </option>
+                <option value="filial"> Filial </option>
+            </select>
+        </div>
+
+        <div class="form-field-crud">
+            <label for="name"> Digite o nome da filial: </label>
+            <input type="text" name="branch_name" id="branch_name" required>
+        </div>
+
+        <div class="form-field-crud">
+            <label for="address"> Digite o endereço da filial: </label>
+            <input type="text" name="branch_address" id="branch_address">
+        </div>        
+
+        <button type="submit" value="Submit"> Adicionar </button>
+    </form>
+
+    <H2> Faixa de Rede </H2>
+
+    <form id="form-crud-network" class="form-crud-network">
+        
+        <div class="form-field-crud">
+            <label for="branch_id"> Escolha o ID da filial: </label>
+            <select name="branch_id" id="branch_id">
+                <option value="">Selecione...</option>
+            </select>
+        </div>
+        
+        <div class="form-field-crud">
+            <label for="ip_version"> Escolha a versão do IP: </label>
+            <select name="ip_version" id="ip_version">
+                <option value="ipv4">Ipv4</option>
+                <option value="ipv6">Ipv6</option>
+            </select>
+        </div>
+
+        <div class="form-field-crud">
+            <label for="description"> Digite a descrição da faixa: </label>
+            <input type="text" name="description" id="description" required>
+        </div>
+
+        <div class="form-field-crud">
+            <label for="collector_type"> Escolha o tipo de coleta: </label>
+            <select name="collector_type" id="collector_type">
+                <option value="ping"> Coleta ICMP (só ping sem dados) </option>
+                <option value="snmp"> Snmp </option>
+                <option value="sgd"> Sgd </option>
+            </select>
+        </div>
+
+        <div class="form-field-crud">
+            <label for="ip_start"> Digite o início da faixa: </label>
+            <input type="text" name="ip_start" id="ip_start" required>
+        </div>
+
+        <div class="form-field-crud">
+            <label for="ip_end"> Digite o fim da faixa: </label>
+            <input type="text" name="ip_end" id="ip_end" required>
+        </div>
+
+        <button type="submit" value="Submit"> Adicionar </button>
+    </form>
+
+    <script type="module" src=""></script>
+</body>
+</html>

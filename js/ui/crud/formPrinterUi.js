@@ -20,8 +20,16 @@ export class FormPrinterUi {
                 const formData = new FormData(this.form);
 
                 const printer = Object.fromEntries(formData.entries());
-
+                
                 console.log(printer);
+
+                fetch("http://10.18.7.113:8000/printers", {
+                    method: "POST",
+                    headers: {'Content-Type': 'application/json'}, 
+                    body: JSON.stringify(printer)
+                }).then(res => {
+                    console.log("Request complete! response:", res);
+                });
             }
         );
 
